@@ -5,7 +5,7 @@ final BinIntParser biParser
   = BinIntParser();
 final BinIntStringer biStringer
   = BinIntStringer();
-final HognavermAngoCodec
+final HognavermAngoCodec hognaverm
   = HognavermAngoCodec();
 
 List<String> split8(String s) {
