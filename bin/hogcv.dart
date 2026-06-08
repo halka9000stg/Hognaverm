@@ -7,7 +7,7 @@ void main(List<String> args) {
     return;
   }
   final direction = args.first;
-  final target = args[2];
+  final target = args[1];
   print(switch(direction){
     "decrypt" => hognaverm.decode(target),
     "encrypt" => hognaverm.encode(target),
