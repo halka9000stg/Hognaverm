@@ -25,7 +25,7 @@ List<String> split8(String s) {
 
 
 class Reverse8 extends Converter<List<int>, List<int>> {
-  const List<int> rev4tab = <int>[
+  final List<int> rev4tab = <int>[
       0x0, 0x8, 0x4, 0xC,
       0x2, 0xA, 0x6, 0xE,
       0x1, 0x9, 0x5, 0xD,
