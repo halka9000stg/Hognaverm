@@ -62,14 +62,16 @@ class HognavermDecryptor extends Converter<String, String> {
   String convert(String input)
     => biParser
       .fuse<List<int>>(rev8cv)
-      .fuse<String>(utf8.decoder);
+      .fuse<String>(utf8.decoder)
+      .convert(input);
 }
 class HognavermEncryptor extends Converter<String, String> {
   @override
   String convert(String input)
     => utf8.encoder
       .fuse<List<int>>(rev8cv)
-      .fuse<String>(biStringer);
+      .fuse<String>(biStringer)
+      .convert(input);
 }
 class HognavermAngoCodec extends Codec<String, String> {
   @override
