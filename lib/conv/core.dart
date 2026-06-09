@@ -55,3 +55,20 @@ class BinIntStringer extends Converter<List<int>, String> {
     => input.map<String>((int i)
       => i.toRadixString(2)).join("");
 }
+
+class HogDecryptor extends Converter<String, String> {}
+class HogEncryptor extends Converter<String, String> {}
+class HogAngoCodec<D extends HogDecryptor, E extends HogEncryptor> extends Codec<String, String> {
+  D get decryptor;
+  E get encryptor;
+
+  @override
+  D get decoder => this.decryptor;
+  @override
+  E get encoder => this.encryptor;
+
+  String decrypt(String input)
+    => this.decode(input);
+  String encrypt(String input)
+    => this.encode(input);
+}

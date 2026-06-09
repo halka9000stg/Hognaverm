@@ -3,7 +3,7 @@ import "packagevhognaverm/conv/core.dart";
 final HognavermAngoCodec hognaverm
   = HognavermAngoCodec();
   
-  class HognavermDecryptor extends Converter<String, String> {
+  class HognavermDecryptor extends HogDecryptor {
   @override
   String convert(String input)
     => biParser
@@ -11,7 +11,7 @@ final HognavermAngoCodec hognaverm
       .fuse<String>(utf8.decoder)
       .convert(input);
 }
-class HognavermEncryptor extends Converter<String, String> {
+class HognavermEncryptor extends HogEncryptor {
   @override
   String convert(String input)
     => utf8.encoder
@@ -20,11 +20,11 @@ class HognavermEncryptor extends Converter<String, String> {
       .convert(input);
 }
 
-class HognavermAngoCodec extends Codec<String, String> {
+class HognavermAngoCodec extends HogAngoCodec<HognavermDecryptor, HognavermEncryptor> {
   @override
-  HognavermEncryptor encoder
+  HognavermEncryptor encryptor
     = HognavermEncryptor();
   @override
-  HognavermDecryptor decoder
+  HognavermDecryptor decryptor
     = HognavermDecryptor();
 }
