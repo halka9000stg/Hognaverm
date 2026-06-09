@@ -1,4 +1,4 @@
-import "package:hognaverm/conv.dart";
+import "package:hognaverm/hognaverm.dart";
 
 void main(List<String> args) {
   final usage = "\$ hogcv [decrypt | encrypt] <target-string>";
